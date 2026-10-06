@@ -1,21 +1,6 @@
 @import "tailwindcss";
 
-/* :root {
-  --background: #182536;
-  --foreground: #F1F4F7;
 
-  --primary: #3E5F7D;
-  --primary-dark: #2C4862;
-  --primary-light: #526F89;
-
-  --accent: #E47A32;
-
-  --surface: #223449;
-  --surface-alt: #2A4055;
-
-  --border: #3B5064;
-  --muted: #AAB8C5;
-} */
 :root {
   --background: #E9EEF3;
   --foreground: #172033;
@@ -61,4 +46,119 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes heroText {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}@keyframes heroDescription {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}@keyframes statsCard {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}.hero-text {
+  animation: heroText 0.7s ease-out;
+}
+
+.hero-description {
+  animation: heroDescription 0.6s ease-out 0.2s both;
+}
+
+.stats-card {
+  animation: statsCard 0.6s ease-out both;
+}
+@keyframes buttonEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.site-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.site-button:hover {
+  transform: translateY(-2px);
+  background: var(--primary-dark);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.site-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.site-button.animate {
+  animation: buttonEntrance 0.6s ease-out 0.35s both;
+}
+@keyframes arrowLeftEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes arrowRightEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-arrow-left {
+  animation: arrowLeftEntrance 0.7s ease-out both;
+}
+
+.hero-arrow-right {
+  animation: arrowRightEntrance 0.7s ease-out 0.1s both;
 }
