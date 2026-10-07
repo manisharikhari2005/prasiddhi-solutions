@@ -2,17 +2,17 @@ const stats = [
   {
     number: "160",
     label: "Happy Clients",
-    image: "/images/clients.png",
+    image: "/about-us.jpg",
   },
   {
     number: "215",
     label: "Projects Done",
-    image: "/images/projects.png",
+    image: "/about-us.jpg",
   },
   {
     number: "124",
     label: "Awards Won",
-    image: "/images/awards.png",
+    image: "/about-us.jpg",
   },
 ];
 

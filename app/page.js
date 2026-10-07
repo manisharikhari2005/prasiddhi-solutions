@@ -3,6 +3,7 @@ import StatsCards from "@/components/StatsCards";
 import About from "./about/page";
 import WhyChooseUsPage from "./prasiddhi/our-features/page";
 import ServicesPage from "./services/page";
+import ContactPage from "./contact/page";
 
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
       <About />
       <WhyChooseUsPage />
       <ServicesPage />
-   
+   <ContactPage/>
     </div>
   );
 }

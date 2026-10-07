@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Search, Menu, X, Sun, Moon } from "lucide-react";
 import { useState } from "react";
 
@@ -14,7 +15,7 @@ export default function Navbar() {
     { name: "Services", href: "/services" },
     { name: "Blog", href: "/blog" },
     { name: "Prasiddhi", href: "/prasiddhi" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "/contact" }, 
   ];
 
   const toggleTheme = () => {
@@ -34,9 +35,26 @@ export default function Navbar() {
       {/* Main Navbar */}
       <div className="flex items-center px-4 py-3 lg:px-6 lg:py-4">
         {/* Logo */}
-        <div className="text-lg font-bold text-foreground lg:text-xl">
-          Prasiddhi <span className="text-(--primary)">Solutions</span>
-        </div>
+        <Link
+          href="/"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+          className="flex items-center"
+        >
+          <div className="h-[45px] w-[150px] overflow-hidden">
+            <Image
+              src="/logo.png"
+              alt="Prasiddhi Solutions"
+              width={150}
+              height={60}
+              className="h-auto w-[150px] object-contain"
+            />
+          </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="ml-auto hidden items-center gap-6 lg:flex">
@@ -44,6 +62,15 @@ export default function Navbar() {
             <Link
               key={el.name}
               href={el.href}
+              onClick={
+                el.name === "Home"
+                  ? () =>
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                      })
+                  : undefined
+              }
               className="text-sm font-medium text-(--muted) transition-colors hover:text-(--primary)"
             >
               {el.name}
@@ -91,7 +118,7 @@ export default function Navbar() {
           <Search size={19} />
         </button>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Button */}
         <button
           type="button"
           className="p-2 lg:hidden"
@@ -114,7 +141,16 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false);
+
+                if (item.name === "Home") {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                  });
+                }
+              }}
               className="text-sm font-medium text-(--muted) transition-colors hover:text-(--primary)"
             >
               {item.name}
@@ -136,4 +172,3 @@ export default function Navbar() {
     </nav>
   );
 }
-  

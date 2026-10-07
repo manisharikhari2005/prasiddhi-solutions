@@ -5,7 +5,7 @@ export default function AboutPage() {
   const features = [
     "Award Winning",
     "Professional Staff",
-    "24/7 Support",
+    "24/7 Support",                                          
     "Fair Prices",
   ];
 
